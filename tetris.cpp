@@ -2,14 +2,12 @@
 "Lucas, he visto como te brillan los ojos cuando hablamos de dinero" ~ Rosalia Peña Ros 2018
 "..." ~ Lucas 2018
 
-La siguiente pieza de codigo es libre, no tiene garantia alguna y solamente se ha programado
+La siguiente pieza de codigo es codigo libre, no tiene garantia alguna y solamente se ha programado
 con propositos academicos. Eres libre de hackearla y distribuirla como quieras.
 
 Esta (muy) basada en el Tetris hecho por javidx9 https://github.com/OneLoneCoder para consola de windows. 
 Id a verlo que se aprende mucho con el.
 */
-#define UNICODE 
-
 #include <iostream>
 #include <Windows.h>
 #include <thread>
@@ -64,7 +62,8 @@ bool cabe(int nTetromino, int nRotacion, int nPosX, int nPosY) {
 	return true;
 }
 
-int main() {	//Creacion de assets
+int main() {
+	//Creacion de assets
 	tetromino[0].append(L"..X...X...X...X."); // Tetronimos 4x4
 	tetromino[1].append(L"..X..XX...X.....");
 	tetromino[2].append(L".....XX..XX.....");
@@ -85,6 +84,7 @@ int main() {	//Creacion de assets
 	wchar_t *pantalla = new wchar_t[nAltura*nAnchura];
 	for (int i = 0; i < nAltura*nAnchura; i++) pantalla[i] = L' ';
 	HANDLE hConsola = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
+
 	SetConsoleActiveScreenBuffer(hConsola);
 	DWORD nBytesEscritos = 0;
 
